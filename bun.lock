@@ -5,6 +5,7 @@
     "": {
       "name": "cv-shivam",
       "dependencies": {
+        "@nuxt/icon": "2.2.1",
         "@nuxt/ui": "^4.4.0",
         "nuxt": "^4.3.0",
         "tailwindcss": "^4.1.18",
