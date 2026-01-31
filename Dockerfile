@@ -12,6 +12,9 @@ RUN bun run build
 
 FROM base AS production
 ENV NODE_ENV=production
-COPY --from=build /app/.output ./.output
+ENV HOST=0.0.0.0
+ENV PORT=3000
+COPY --from=build --chown=bun:bun /app/.output ./.output
+USER bun
 EXPOSE 3000
 CMD ["bun", ".output/server/index.mjs"]
