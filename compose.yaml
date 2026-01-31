@@ -1,0 +1,25 @@
+services:
+  cv:
+    image: ghcr.io/${IMAGE_NAME}:latest
+    restart: unless-stopped
+    environment:
+      - NODE_ENV=production
+      - HOST=0.0.0.0
+      - PORT=3000
+
+  caddy:
+    image: caddy:latest
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile
+      - caddy_data:/data                  # Keeps your SSL certs safe
+      - caddy_config:/config
+    depends_on:
+      - cv
+
+volumes:
+  caddy_data:
+  caddy_config:
