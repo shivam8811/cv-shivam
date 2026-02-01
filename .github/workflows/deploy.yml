@@ -66,16 +66,23 @@ jobs:
               sudo apt-get update
               sudo apt-get install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
               sudo usermod -aG docker $USER
-              sudo systemctl enable docker
-              sudo systemctl start docker
             fi
+            
+            # Ensure Docker daemon is running
+            sudo systemctl daemon-reload
+            sudo systemctl enable docker
+            sudo systemctl restart docker
+            sleep 5
+            
+            # Verify Docker is running
+            sudo docker version
             
             mkdir -p ~/app
             cd ~/app
             
-            echo "${{ secrets.GH_PAT }}" | docker login ${{ env.REGISTRY }} -u ${{ github.actor }} --password-stdin
+            echo "${{ secrets.GH_PAT }}" | sudo docker login ${{ env.REGISTRY }} -u ${{ github.actor }} --password-stdin
             
-            docker rm -f cv-shivam || true
+            sudo docker rm -f cv-shivam || true
             
             sudo IMAGE_NAME=${{ env.IMAGE_NAME }} docker compose pull
             sudo IMAGE_NAME=${{ env.IMAGE_NAME }} docker compose up -d --remove-orphans
