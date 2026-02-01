@@ -57,15 +57,15 @@ jobs:
           script: |
             if ! docker compose version > /dev/null 2>&1; then
               echo "Docker Compose not found. Installing..."
-              sudo dnf install -y dnf-plugins-core
-              sudo dnf config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
-              sudo dnf install -y docker-compose-plugin
+              sudo apt-get update
+              sudo apt-get install -y docker.io docker-compose-plugin
+              sudo usermod -aG docker $USER
             fi
             
             mkdir -p ~/app
             cd ~/app
             
-            echo "${{ secrets.GITHUB_TOKEN }}" | docker login ${{ env.REGISTRY }} -u ${{ github.actor }} --password-stdin
+            echo "${{ secrets.GH_PAT }}" | docker login ${{ env.REGISTRY }} -u ${{ github.actor }} --password-stdin
             
             docker rm -f cv-shivam || true
             
