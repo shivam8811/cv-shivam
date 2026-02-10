@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { cv } from "~/data/cv";
+navigateTo("/experience", { redirectCode: 301 });
 </script>
 
 <template>
-  <CvAbout :summary="cv.summary" />
+  <div />
 </template>

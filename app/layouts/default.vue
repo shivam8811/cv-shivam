@@ -10,11 +10,6 @@ useSeoMeta({
 
 const links = [
 	{
-		label: "About",
-		to: "/",
-		icon: "i-heroicons-user",
-	},
-	{
 		label: "Experience",
 		to: "/experience",
 		icon: "i-heroicons-briefcase",
@@ -28,6 +23,11 @@ const links = [
 		label: "Projects",
 		to: "/projects",
 		icon: "i-heroicons-code-bracket",
+	},
+	{
+		label: "About",
+		to: "/about",
+		icon: "i-heroicons-user",
 	},
 ];
 </script>
