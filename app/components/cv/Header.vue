@@ -10,124 +10,120 @@ defineProps<{
 
 <template>
 	<section class="header">
+		<UAvatar
+			:alt="name"
+			size="3xl"
+			class="header__avatar"
+            :ui="{ root: 'bg-primary-500 dark:bg-primary-400 text-white dark:text-slate-900' }"
+		/>
+
 		<h1 class="header__name">{{ name }}</h1>
 		<p class="header__title">{{ title }}</p>
 
-		<div
-			v-if="contact.email || contact.phone || contact.location"
-			class="header__contact"
-		>
-			<UButton
+		<div class="header__links">
+			<BaseButton
 				v-if="contact.email"
 				:to="`mailto:${contact.email}`"
-				variant="soft"
-				size="sm"
 				icon="i-heroicons-envelope"
+				class="header__link"
 			>
 				{{ contact.email }}
-			</UButton>
+			</BaseButton>
 
-			<UButton
+			<BaseButton
 				v-if="contact.phone"
 				:to="`tel:${contact.phone}`"
-				variant="soft"
-				size="sm"
 				icon="i-heroicons-phone"
+				class="header__link"
 			>
 				{{ contact.phone }}
-			</UButton>
+			</BaseButton>
 
-			<UButton
+			<BaseButton
 				v-if="contact.location"
-				variant="soft"
-				size="sm"
 				icon="i-heroicons-map-pin"
+				class="header__link"
 			>
 				{{ contact.location }}
-			</UButton>
-		</div>
+			</BaseButton>
 
-		<div
-			v-if="contact.github || contact.linkedin || contact.website"
-			class="header__social"
-		>
-			<UButton
+			<div class="header__social">
+			<BaseButton
 				v-if="contact.github"
 				:to="contact.github"
 				target="_blank"
-				variant="ghost"
-				size="sm"
-				icon="i-heroicons-code-bracket"
-			>
-				GitHub
-			</UButton>
+				rel="noopener noreferrer"
+				icon="i-simple-icons-github"
+				aria-label="GitHub profile"
+			/>
 
-			<UButton
+			<BaseButton
 				v-if="contact.linkedin"
 				:to="contact.linkedin"
 				target="_blank"
-				variant="ghost"
-				size="sm"
-				icon="i-heroicons-link"
-			>
-				LinkedIn
-			</UButton>
+				rel="noopener noreferrer"
+				icon="i-simple-icons-linkedin"
+				aria-label="LinkedIn profile"
+			/>
 
-			<UButton
+			<BaseButton
 				v-if="contact.website"
 				:to="contact.website"
 				target="_blank"
-				variant="ghost"
-				size="sm"
+				rel="noopener noreferrer"
 				icon="i-heroicons-globe-alt"
-			>
-				Website
-			</UButton>
+				aria-label="Personal website"
+			/>
+			</div>
 		</div>
 	</section>
 </template>
 
 <style scoped>
 .header {
-	margin-bottom: 3rem;
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+}
+
+.header__avatar {
+	margin-bottom: 1rem;
+	font-weight: 600;
 }
 
 .header__name {
-	font-size: 2.5rem;
-	font-weight: 700;
-	margin-bottom: 0.5rem;
+	font-size: 2rem;
+	font-weight: 800;
+	line-height: 1.1;
+	letter-spacing: -0.025em;
+    color: var(--ui-text);
 }
 
 .header__title {
-	font-size: 1.25rem;
-	color: var(--ui-text-muted);
-	margin-bottom: 1.5rem;
-}
-
-.header__contact {
-	display: flex;
-	flex-wrap: wrap;
-	gap: 0.75rem;
+	font-size: 1.125rem;
+	color: var(--ui-primary);
+    font-weight: 500;
 	margin-bottom: 1rem;
 }
 
-.header__contact:last-child {
-	margin-bottom: 0;
+.header__links {
+	display: flex;
+	flex-direction: column;
+	gap: 0.25rem;
+	align-items: flex-start;
+}
+
+.header__link {
+	padding-left: 0;
+}
+
+.header__link:hover {
+    color: var(--ui-primary);
 }
 
 .header__social {
 	display: flex;
-	flex-wrap: wrap;
 	gap: 0.5rem;
-}
-
-@media (min-width: 768px) {
-	.header__name {
-		font-size: 3rem;
-	}
-
-	.header__title {
-		font-size: 1.5rem;
-	}
+	margin-top: 1rem;
 }
 </style>

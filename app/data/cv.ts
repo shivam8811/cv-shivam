@@ -1,17 +1,16 @@
 import type { CV } from "~/types/cv";
 
 export const cv: CV = {
-	name: "Your Name",
+	name: "Shivam Chaudhary",
 	title: "Software Developer",
 	summary:
 		"Passionate software developer with experience in building web applications.",
 	contact: {
-		email: "your.email@example.com",
-		phone: "+1 234 567 890",
-		location: "City, Country",
-		linkedin: "https://linkedin.com/in/yourprofile",
-		github: "https://github.com/yourusername",
-		website: "https://yourwebsite.com",
+		email: "shivam.svm007@gmail.com",
+		phone: "+49 151 71198811",
+		location: "Fulda, Germany",
+		linkedin: "https://linkedin.com/in/shivam-chaudhary-b17b271a2/",
+		github: "https://github.com/shivam8811/",
 	},
 	experience: [
 		{

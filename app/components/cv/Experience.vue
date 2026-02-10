@@ -4,34 +4,41 @@ import type { Experience } from "~/types/cv";
 defineProps<{
 	items: Experience[];
 }>();
-
-const formatDateRange = (startDate: string, endDate?: string, current?: boolean) => {
-	const end = current ? "Present" : endDate ?? "";
-	return `${startDate} — ${end}`;
-};
 </script>
 
 <template>
 	<section class="experience">
-		<h2 class="section-title">Experience</h2>
+		<h2 class="sr-only">Work Experience</h2>
 
 		<div class="experience__list">
-			<UCard
+			<BaseCard
 				v-for="item in items"
 				:key="`${item.company}-${item.role}`"
+				class="experience__item"
 			>
 				<div class="experience__header">
-					<div class="experience__info">
+					<div class="experience__main">
 						<h3 class="experience__role">{{ item.role }}</h3>
-						<p class="experience__company">{{ item.company }}</p>
+					<a
+						v-if="item.url"
+						:href="item.url"
+						target="_blank"
+						rel="noopener noreferrer"
+						class="experience__company"
+					>
+							{{ item.company }}
+						</a>
+						<span
+							v-else
+							class="experience__company"
+						>
+							{{ item.company }}
+						</span>
 					</div>
 
-					<UBadge
-						variant="subtle"
-						class="experience__date"
-					>
+					<span class="experience__date">
 						{{ formatDateRange(item.startDate, item.endDate, item.current) }}
-					</UBadge>
+					</span>
 				</div>
 
 				<ul
@@ -45,64 +52,70 @@ const formatDateRange = (startDate: string, endDate?: string, current?: boolean)
 						{{ desc }}
 					</li>
 				</ul>
-			</UCard>
+			</BaseCard>
 		</div>
 	</section>
 </template>
 
 <style scoped>
 .experience {
-	margin-bottom: 3rem;
+	margin-bottom: 4rem;
 }
 
 .experience__list {
 	display: flex;
 	flex-direction: column;
-	gap: 1.5rem;
+	gap: 3rem;
+}
+
+.experience__item {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
 }
 
 .experience__header {
 	display: flex;
 	flex-direction: column;
-	gap: 0.5rem;
-	margin-bottom: 0.75rem;
-}
-
-.experience__header:last-child {
-	margin-bottom: 0;
-}
-
-.experience__info {
-	flex: 1;
+	gap: 0.25rem;
 }
 
 .experience__role {
-	font-size: 1.125rem;
+	font-size: 1.25rem;
 	font-weight: 600;
+	color: var(--ui-text);
 }
 
 .experience__company {
-	color: var(--ui-text-muted);
+	font-size: 1rem;
+	color: var(--ui-primary);
+	text-decoration: none;
+    font-weight: 500;
+}
+
+a.experience__company:hover {
+	text-decoration: underline;
 }
 
 .experience__date {
-	width: fit-content;
+	font-size: 0.875rem;
+	color: var(--ui-text-muted);
+	font-family: monospace;
 }
 
 .experience__description {
-	list-style: disc;
-	list-style-position: inside;
 	color: var(--ui-text-muted);
 	display: flex;
 	flex-direction: column;
-	gap: 0.25rem;
+	gap: 0.5rem;
+	line-height: 1.6;
 }
 
 @media (min-width: 768px) {
 	.experience__header {
 		flex-direction: row;
-		align-items: flex-start;
 		justify-content: space-between;
+		align-items: baseline;
 	}
 }
 </style>

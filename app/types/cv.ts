@@ -9,6 +9,7 @@ export interface ContactInfo {
 
 export interface Experience {
 	company: string;
+	url?: string;
 	role: string;
 	startDate: string;
 	endDate?: string;
@@ -18,6 +19,7 @@ export interface Experience {
 
 export interface Education {
 	institution: string;
+	url?: string;
 	degree: string;
 	field: string;
 	startDate: string;

@@ -12,12 +12,8 @@ const toggleColorMode = () => {
 	<UApp>
 		<header class="header">
 			<UContainer class="header__container">
-				<span class="header__logo">CV</span>
-
 				<ClientOnly>
-					<UButton
-						variant="ghost"
-						size="sm"
+					<BaseButton
 						:icon="isDark ? 'i-heroicons-sun' : 'i-heroicons-moon'"
 						aria-label="Toggle color mode"
 						@click="toggleColorMode"
@@ -30,33 +26,25 @@ const toggleColorMode = () => {
 			</UContainer>
 		</header>
 
-		<main>
-			<NuxtRouteAnnouncer />
+		<NuxtLayout>
 			<NuxtPage />
-		</main>
+		</NuxtLayout>
 	</UApp>
 </template>
 
 <style scoped>
 .header {
-	position: sticky;
+	position: fixed;
 	top: 0;
+	right: 0;
 	z-index: 50;
-	background-color: var(--ui-bg);
-	backdrop-filter: blur(8px);
-	border-bottom: 1px solid var(--ui-border);
+	padding: 1rem;
 }
 
 .header__container {
 	display: flex;
-	justify-content: space-between;
+	justify-content: flex-end;
 	align-items: center;
-	padding-block: 1rem;
-	max-width: 56rem;
-}
-
-.header__logo {
-	font-weight: 600;
 }
 
 .header__placeholder {

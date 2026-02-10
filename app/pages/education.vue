@@ -3,5 +3,8 @@ import { cv } from "~/data/cv";
 </script>
 
 <template>
-  <CvAbout :summary="cv.summary" />
+  <CvEducation
+    v-if="cv.education.length"
+    :items="cv.education"
+  />
 </template>

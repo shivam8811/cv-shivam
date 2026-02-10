@@ -10,55 +10,56 @@ defineProps<{
 	<section class="skills">
 		<h2 class="section-title">Skills</h2>
 
-		<div class="skills__grid">
-			<UCard
+		<div class="skills__list">
+			<div
 				v-for="skill in items"
 				:key="skill.category"
+				class="skills__group"
 			>
 				<h3 class="skills__category">{{ skill.category }}</h3>
-
-				<div
-					v-if="skill.items.length"
-					class="skills__list"
-				>
-					<UBadge
+				<div class="skills__items">
+					<BaseBadge
 						v-for="item in skill.items"
 						:key="item"
-						variant="soft"
 					>
 						{{ item }}
-					</UBadge>
+					</BaseBadge>
 				</div>
-			</UCard>
+			</div>
 		</div>
 	</section>
 </template>
 
 <style scoped>
 .skills {
-	margin-bottom: 3rem;
+	display: flex;
+	flex-direction: column;
+	gap: 1.5rem;
 }
 
-.skills__grid {
-	display: grid;
-	grid-template-columns: 1fr;
-	gap: 1rem;
-}
-
-.skills__category {
-	font-weight: 600;
-	margin-bottom: 0.75rem;
+.section-title {
+	font-size: 0.875rem;
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+	color: var(--ui-text-muted);
 }
 
 .skills__list {
 	display: flex;
-	flex-wrap: wrap;
-	gap: 0.5rem;
+	flex-direction: column;
+	gap: 1.5rem;
 }
 
-@media (min-width: 640px) {
-	.skills__grid {
-		grid-template-columns: repeat(2, 1fr);
-	}
+.skills__category {
+	font-size: 0.875rem;
+	font-weight: 600;
+	margin-bottom: 0.75rem;
+}
+
+.skills__items {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5rem;
 }
 </style>
