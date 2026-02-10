@@ -39,6 +39,9 @@ const toggleColorMode = () => {
 	right: 0;
 	z-index: 50;
 	padding: 1rem;
+	border-radius: 0 0 0 0.75rem;
+	backdrop-filter: blur(12px);
+	-webkit-backdrop-filter: blur(12px);
 }
 
 .header__container {

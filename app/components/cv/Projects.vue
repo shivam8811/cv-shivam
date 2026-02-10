@@ -80,6 +80,7 @@ defineProps<{
 
 .project-card:hover {
 	transform: translateY(-2px);
+	box-shadow: var(--card-shadow-hover);
 }
 
 .project-card__header {

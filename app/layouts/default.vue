@@ -84,6 +84,13 @@ const links = [
 	display: flex;
 	flex-direction: column;
 	gap: 3rem;
+	background: var(--sidebar-bg);
+	backdrop-filter: blur(16px);
+	-webkit-backdrop-filter: blur(16px);
+	border: 1px solid color-mix(in srgb, var(--ui-border) 60%, transparent);
+	border-radius: 1rem;
+	padding: 2rem;
+	box-shadow: var(--card-shadow);
 }
 
 .cv-nav {
@@ -101,7 +108,7 @@ const links = [
 }
 
 .cv-nav__item--active {
-	background-color: var(--ui-bg-accent);
+	background-color: color-mix(in srgb, var(--ui-primary) 10%, transparent);
 	color: var(--ui-primary) !important;
 }
 

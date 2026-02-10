@@ -2,31 +2,69 @@
 @import "@nuxt/ui";
 
 :root {
-	/* Use a soft slate for the main background instead of pure white */
-	--ui-bg: var(--color-slate-50);
+	/* Zinc neutrals — true gray with no blue/purple tint */
+	--ui-bg: var(--color-zinc-50);
 	--ui-bg-elevated: var(--color-white);
-	--ui-bg-accent: var(--color-slate-100);
-	--ui-border: var(--color-slate-200);
-	--ui-text: var(--color-slate-900);
-	--ui-text-muted: var(--color-slate-500);
+	--ui-bg-accent: var(--color-zinc-100);
+	--ui-border: var(--color-zinc-200);
+	--ui-text: var(--color-zinc-900);
+	--ui-text-muted: var(--color-zinc-500);
 
-	--ui-primary: var(--color-indigo-600);
+	/* Emerald accent — fresh, professional, and distinctive */
+	--ui-primary: var(--color-emerald-600);
+
+	/* Full-page gradient: sage → mint → cyan (clearly tinted, not white) */
+	--bg-from: #ecfdf5;
+	--bg-via: #f0fdfa;
+	--bg-to: #ecfeff;
+
+	/* Radial blobs layered on top for extra depth */
+	--gradient-1: rgba(16, 185, 129, 0.20);
+	--gradient-2: rgba(6, 182, 212, 0.15);
+	--gradient-3: rgba(245, 158, 11, 0.08);
+
+	/* Sidebar: sage-tinted glass instead of flat white */
+	--sidebar-bg: rgba(236, 253, 245, 0.55);
+
+	--card-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.04), 0 1px 2px -1px rgb(0 0 0 / 0.03);
+	--card-shadow-hover: 0 10px 25px -5px rgb(0 0 0 / 0.08), 0 8px 10px -6px rgb(0 0 0 / 0.03);
 }
 
 .dark {
-	/* Use a deep blue-gray for the main background instead of pure black */
-	--ui-bg: var(--color-slate-900);
-	--ui-bg-elevated: var(--color-slate-800);
-	--ui-bg-accent: var(--color-slate-700);
-	--ui-border: var(--color-slate-700);
-	--ui-text: var(--color-slate-50);
-	--ui-text-muted: var(--color-slate-400);
+	/* Deep dark zinc — rich and modern, never pure black */
+	--ui-bg: var(--color-zinc-950);
+	--ui-bg-elevated: var(--color-zinc-900);
+	--ui-bg-accent: var(--color-zinc-800);
+	--ui-border: var(--color-zinc-800);
+	--ui-text: var(--color-zinc-50);
+	--ui-text-muted: var(--color-zinc-400);
 
-	--ui-primary: var(--color-indigo-400);
+	--ui-primary: var(--color-emerald-400);
+
+	/* Dark mode: solid dark base, radial blobs provide the aurora color */
+	--bg-from: var(--color-zinc-950);
+	--bg-via: var(--color-zinc-950);
+	--bg-to: var(--color-zinc-950);
+
+	--gradient-1: rgba(52, 211, 153, 0.18);
+	--gradient-2: rgba(34, 211, 238, 0.14);
+	--gradient-3: rgba(251, 191, 36, 0.06);
+
+	--sidebar-bg: rgba(9, 9, 11, 0.55);
+
+	--card-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.12), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+	--card-shadow-hover: 0 10px 25px -5px rgb(0 0 0 / 0.25), 0 8px 10px -6px rgb(0 0 0 / 0.15);
 }
 
 body {
 	background-color: var(--ui-bg);
+	background-image:
+		radial-gradient(at 0% 0%, var(--gradient-1) 0%, transparent 50%),
+		radial-gradient(at 100% 100%, var(--gradient-2) 0%, transparent 50%),
+		radial-gradient(at 50% 50%, var(--gradient-3) 0%, transparent 50%),
+		linear-gradient(135deg, var(--bg-from) 0%, var(--bg-via) 50%, var(--bg-to) 100%);
+	background-attachment: fixed;
+	min-height: 100vh;
 	color: var(--ui-text);
 	font-family: "Inter", sans-serif;
 	-webkit-font-smoothing: antialiased;
