@@ -4,7 +4,7 @@ export interface ContactInfo {
 	location?: string;
 	linkedin?: string;
 	github?: string;
-	website?: string;
+	xing?: string;
 }
 
 export interface Experience {

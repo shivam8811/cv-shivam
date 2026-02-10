@@ -11,6 +11,7 @@ export const cv: CV = {
 		location: "Fulda, Germany",
 		linkedin: "https://linkedin.com/in/shivam-chaudhary-b17b271a2/",
 		github: "https://github.com/shivam8811/",
+		xing: "https://www.xing.com/profile/Shivam_Chaudhary4/web_profiles?nwt_nav=profile&expandNeffi=true",
 	},
 	experience: [
 		{

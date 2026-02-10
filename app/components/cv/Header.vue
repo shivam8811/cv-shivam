@@ -67,12 +67,12 @@ defineProps<{
 			/>
 
 			<BaseButton
-				v-if="contact.website"
-				:to="contact.website"
+				v-if="contact.xing"
+				:to="contact.xing"
 				target="_blank"
 				rel="noopener noreferrer"
-				icon="i-heroicons-globe-alt"
-				aria-label="Personal website"
+				icon="i-simple-icons-xing"
+				aria-label="Xing profile"
 			/>
 			</div>
 		</div>
