@@ -46,6 +46,11 @@ const links = [
 					v-if="cv.skills.length"
 					:items="cv.skills"
 				/>
+
+				<CvLanguages
+					v-if="cv.languages.length"
+					:items="cv.languages"
+				/>
 			</aside>
 
 			<main class="cv-main">

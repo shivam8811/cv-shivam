@@ -31,6 +31,11 @@ export interface Skill {
 	items: string[];
 }
 
+export interface Language {
+	name: string;
+	level: "Native" | "Fluent" | "Advanced" | "Intermediate" | "Basic";
+}
+
 export interface Project {
 	name: string;
 	description: string;
@@ -47,5 +52,6 @@ export interface CV {
 	experience: Experience[];
 	education: Education[];
 	skills: Skill[];
+	languages: Language[];
 	projects: Project[];
 }
