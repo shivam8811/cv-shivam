@@ -35,9 +35,9 @@ defineProps<{
 						</p>
 					</div>
 
-					<span class="education__date">
+					<BaseBadge class="education__date">
 						{{ formatDateRange(item.startDate, item.endDate) }}
-					</span>
+					</BaseBadge>
 				</div>
 			</BaseCard>
 		</div>
@@ -86,9 +86,8 @@ defineProps<{
 }
 
 .education__date {
-	font-size: 0.875rem;
-	color: var(--ui-text-muted);
-	font-family: monospace;
+	white-space: nowrap;
+	flex-shrink: 0;
 }
 
 @media (min-width: 768px) {

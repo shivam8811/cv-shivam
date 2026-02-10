@@ -36,9 +36,9 @@ defineProps<{
 						</span>
 					</div>
 
-					<span class="experience__date">
+					<BaseBadge class="experience__date">
 						{{ formatDateRange(item.startDate, item.endDate, item.current) }}
-					</span>
+					</BaseBadge>
 				</div>
 
 				<ul
@@ -98,9 +98,8 @@ a.experience__company:hover {
 }
 
 .experience__date {
-	font-size: 0.875rem;
-	color: var(--ui-text-muted);
-	font-family: monospace;
+	white-space: nowrap;
+	flex-shrink: 0;
 }
 
 .experience__description {
