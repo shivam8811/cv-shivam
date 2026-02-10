@@ -28,12 +28,11 @@ const levelPercentage: Record<Language["level"], number> = {
 					<span class="languages__name">{{ lang.name }}</span>
 					<span class="languages__level">{{ lang.level }}</span>
 				</div>
-				<div class="languages__bar">
-					<div
-						class="languages__fill"
-						:style="{ width: `${levelPercentage[lang.level]}%` }"
-					/>
-				</div>
+				<UProgress
+					:model-value="levelPercentage[lang.level]"
+					:max="100"
+					size="sm"
+				/>
 			</div>
 		</div>
 	</section>
@@ -75,19 +74,5 @@ const levelPercentage: Record<Language["level"], number> = {
 .languages__level {
 	font-size: 0.75rem;
 	color: var(--ui-text-muted);
-}
-
-.languages__bar {
-	height: 0.375rem;
-	border-radius: 9999px;
-	background-color: color-mix(in srgb, var(--ui-border) 60%, transparent);
-	overflow: hidden;
-}
-
-.languages__fill {
-	height: 100%;
-	border-radius: 9999px;
-	background-color: var(--ui-primary);
-	transition: width 0.6s ease;
 }
 </style>
