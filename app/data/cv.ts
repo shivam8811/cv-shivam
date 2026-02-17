@@ -16,6 +16,7 @@ export const cv: CV = {
 	experience: [
 		{
 			company: "CHECK24 Vergleichsportal für Sachversicherungen GmbH",
+			url: "https://check24.de",
 			role: "Fullstack Software Engineer",
 			startDate: "2025-03",
 			current: true,
@@ -49,6 +50,7 @@ export const cv: CV = {
 		},
 		{
 			company: "starmobile IT GmbH",
+			url: "https://starmobile.de",
 			role: "Fullstack Developer (Working Student)",
 			startDate: "2022-11",
 			endDate: "2025-02",
