@@ -15,7 +15,7 @@ export const cv: CV = {
 	},
 	experience: [
 		{
-			company: "CHECK24 Vergleichsportal GmbH",
+			company: "CHECK24 Vergleichsportal für Sachversicherungen GmbH",
 			role: "Fullstack Software Engineer",
 			startDate: "2025-03",
 			current: true,
