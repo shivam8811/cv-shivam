@@ -1,75 +1,69 @@
-# Nuxt Minimal Starter
+# Personal CV — Shivam Chaudhary
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+A single-page portfolio and CV application.
 
-## Setup
+**Live:** [shivam-cv.space](https://shivam-cv.space)
 
-Make sure to install dependencies:
+## Tech Stack
+
+- **Framework:** Nuxt 4 (Vue 3 Composition API)
+- **UI:** Nuxt UI 4, Tailwind CSS v4
+- **Language:** TypeScript
+- **Linting:** Biome
+- **Package Manager:** Bun
+- **Deployment:** Docker + Caddy, automated via GitHub Actions
+
+## Getting Started
+
+### Prerequisites
+
+- [Bun](https://bun.sh/) installed
+
+### Install Dependencies
 
 ```bash
-# npm
-npm install
-
-# pnpm
-pnpm install
-
-# yarn
-yarn install
-
-# bun
 bun install
 ```
 
-## Development Server
-
-Start the development server on `http://localhost:3000`:
+### Development
 
 ```bash
-# npm
-npm run dev
-
-# pnpm
-pnpm dev
-
-# yarn
-yarn dev
-
-# bun
 bun run dev
 ```
 
-## Production
+Opens at `http://localhost:3000`.
 
-Build the application for production:
+### Production Build
 
 ```bash
-# npm
-npm run build
-
-# pnpm
-pnpm build
-
-# yarn
-yarn build
-
-# bun
 bun run build
 ```
 
-Locally preview production build:
+### Preview Production Build
 
 ```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm preview
-
-# yarn
-yarn preview
-
-# bun
 bun run preview
 ```
 
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+## Project Structure
+
+```
+app/
+├── components/
+│   ├── base/       — Reusable UI primitives (wrapping Nuxt UI)
+│   └── cv/         — CV section components
+├── composables/    — Vue composables (SEO, etc.)
+├── data/           — Static typed CV data
+├── types/          — TypeScript interfaces
+├── layouts/        — Page layouts
+├── pages/          — File-based routing
+└── utils/          — Auto-imported utility functions
+```
+
+## Deployment
+
+Pushes to `main` trigger a GitHub Actions workflow that:
+
+1. Builds a Docker image (Bun + Alpine)
+2. Pushes it to GitHub Container Registry
+3. Deploys to the server via SSH with Docker Compose + Caddy as reverse proxy
