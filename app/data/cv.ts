@@ -16,33 +16,35 @@ export const cv: CV = {
 	experience: [
 		{
 			company: "CHECK24 Vergleichsportal GmbH",
-			role: "Fullstack Developer",
-			startDate: "2025-11",
+			role: "Fullstack Software Engineer",
+			startDate: "2025-03",
 			current: true,
 			description: [
 				"Developing and maintaining fullstack web applications with Vue.js and Symfony",
 				"Building and optimizing MySQL database queries and schemas",
 				"Leveraging AI-assisted development tools such as Cursor to boost productivity",
 			],
-		},
-		{
-			company: "CHECK24 Vergleichsportal GmbH",
-			role: "Fullstack Developer (Intern)",
-			startDate: "2025-08",
-			endDate: "2025-10",
-			description: [
-				"Completed internship working on fullstack features with Vue.js, Symfony, and MySQL",
-				"Integrated AI-powered tooling into the development workflow",
-			],
-		},
-		{
-			company: "CHECK24 Vergleichsportal GmbH",
-			role: "Fullstack Developer (Working Student)",
-			startDate: "2025-03",
-			endDate: "2025-07",
-			description: [
-				"Contributed to fullstack development using Vue.js, Symfony, and MySQL",
-				"Utilized AI-assisted tools like Cursor to accelerate feature development",
+			positions: [
+				{
+					role: "Full-time",
+					startDate: "2026-03",
+					current: true,
+				},
+				{
+					role: "Part-time",
+					startDate: "2025-11",
+					endDate: "2026-02",
+				},
+				{
+					role: "Internship",
+					startDate: "2025-08",
+					endDate: "2025-10",
+				},
+				{
+					role: "Working Student",
+					startDate: "2025-03",
+					endDate: "2025-07",
+				},
 			],
 		},
 		{

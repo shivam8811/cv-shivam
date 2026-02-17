@@ -7,6 +7,13 @@ export interface ContactInfo {
 	xing?: string;
 }
 
+export interface Position {
+	role: string;
+	startDate: string;
+	endDate?: string;
+	current?: boolean;
+}
+
 export interface Experience {
 	company: string;
 	url?: string;
@@ -15,6 +22,7 @@ export interface Experience {
 	endDate?: string;
 	current?: boolean;
 	description: string[];
+	positions?: Position[];
 }
 
 export interface Education {

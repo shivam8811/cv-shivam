@@ -9,6 +9,12 @@ export default defineNuxtConfig({
 			htmlAttrs: { lang: "en" },
 		},
 	},
+	routeRules: {
+		"/experience": { redirect: "/#experience" },
+		"/education": { redirect: "/#education" },
+		"/projects": { redirect: "/#projects" },
+		"/about": { redirect: "/#about" },
+	},
 	icon: {
 		serverBundle: "remote",
 	},
