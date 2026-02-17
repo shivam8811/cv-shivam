@@ -46,11 +46,11 @@ defineProps<{
 					class="experience__positions"
 				>
 					<div
-						v-for="pos in item.positions"
-						:key="`${pos.role}-${pos.startDate}`"
-						class="experience__position"
-					>
-						<span class="experience__position-role">{{ pos.role }}</span>
+					v-for="pos in item.positions"
+					:key="`${pos.type}-${pos.startDate}`"
+					class="experience__position"
+				>
+					<span class="experience__position-role">{{ pos.type }}</span>
 						<span class="experience__position-date">
 							{{ formatDateRange(pos.startDate, pos.endDate, pos.current) }}
 						</span>

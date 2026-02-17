@@ -8,7 +8,7 @@ export interface ContactInfo {
 }
 
 export interface Position {
-	role: string;
+	type: string;
 	startDate: string;
 	endDate?: string;
 	current?: boolean;
@@ -31,7 +31,8 @@ export interface Education {
 	degree: string;
 	field: string;
 	startDate: string;
-	endDate: string;
+	endDate?: string;
+	current?: boolean;
 }
 
 export interface Skill {

@@ -4,7 +4,7 @@ export const cv: CV = {
 	name: "Shivam Chaudhary",
 	title: "Fullstack Software Engineer",
 	summary:
-		"Fullstack Software Engineer at CHECK24 with hands-on experience in PHP, Laravel, JavaScript, and Vue.js. Holds a background in International Engineering Sciences with a specialization in Applied Computer Science from Hochschule Fulda, including an Erasmus+ semester at Universidad de Málaga, Spain.",
+		"Fullstack Software Engineer at CHECK24 with hands-on experience in PHP, Symfony, Laravel, JavaScript, and Vue.js. Currently building and maintaining web applications with Vue.js and Symfony. Holds a background in International Engineering Sciences with a specialization in Applied Computer Science from Hochschule Fulda, including an Erasmus+ semester at Universidad de Málaga, Spain.",
 	contact: {
 		email: "shivam.svm007@gmail.com",
 		phone: "+49 151 71198811",
@@ -26,22 +26,22 @@ export const cv: CV = {
 			],
 			positions: [
 				{
-					role: "Full-time",
+					type: "Full-time",
 					startDate: "2026-03",
 					current: true,
 				},
 				{
-					role: "Part-time",
+					type: "Part-time",
 					startDate: "2025-11",
 					endDate: "2026-02",
 				},
 				{
-					role: "Internship",
+					type: "Internship",
 					startDate: "2025-08",
 					endDate: "2025-10",
 				},
 				{
-					role: "Working Student",
+					type: "Working Student",
 					startDate: "2025-03",
 					endDate: "2025-07",
 				},
@@ -67,7 +67,7 @@ export const cv: CV = {
 			degree: "Bachelor of Science",
 			field: "International Engineering Sciences (Applied Computer Science)",
 			startDate: "2020-10",
-			endDate: "Present",
+			current: true,
 		},
 		{
 			institution: "Universidad de Málaga, Spain (Erasmus+)",
@@ -98,7 +98,14 @@ export const cv: CV = {
 		},
 		{
 			category: "Frontend",
-			items: ["Vue.js", "Vuetify", "Pinia", "InertiaJs", "Bootstrap"],
+			items: [
+				"Vue.js",
+				"Nuxt.js",
+				"Vuetify",
+				"Pinia",
+				"InertiaJs",
+				"Bootstrap",
+			],
 		},
 		{
 			category: "Backend",
@@ -106,7 +113,7 @@ export const cv: CV = {
 		},
 		{
 			category: "Tools",
-			items: ["Git", "GitHub", "Cursor", "AI-Assisted Development"],
+			items: ["Git", "GitHub", "Docker", "Cursor"],
 		},
 	],
 	languages: [
@@ -125,24 +132,18 @@ export const cv: CV = {
 	],
 	projects: [
 		{
-			name: "Go-News",
-			description: "A news application built with Go",
-			technologies: ["Go"],
-			github: "https://github.com/shivam8811/go-news",
-		},
-		{
-			name: "Coach-Finder",
-			description: "A platform to find and connect with coaches",
-			technologies: ["Vue.js"],
-			url: "https://coach-finder123.netlify.app/coaches",
-			github: "https://github.com/shivam8811/coach-finder",
-		},
-		{
-			name: "Event-Organizer",
-			description: "A web application for organizing and managing events",
-			technologies: ["JavaScript"],
-			url: "https://eventplanner.azurewebsites.net/",
-			github: "https://github.com/HSFD-WS-24-25/backend",
+			name: "Personal CV",
+			description:
+				"A single-page portfolio application built with Nuxt 4, Nuxt UI, and Tailwind CSS, deployed with Docker and Caddy via GitHub Actions",
+			technologies: [
+				"Nuxt.js",
+				"Vue.js",
+				"TypeScript",
+				"Tailwind CSS",
+				"Docker",
+			],
+			url: "https://shivam-cv.space",
+			github: "https://github.com/shivam8811/cv-shivam",
 		},
 	],
 };

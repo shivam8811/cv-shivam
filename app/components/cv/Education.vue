@@ -36,7 +36,7 @@ defineProps<{
 					</div>
 
 					<BaseBadge class="education__date">
-						{{ formatDateRange(item.startDate, item.endDate) }}
+						{{ formatDateRange(item.startDate, item.endDate, item.current) }}
 					</BaseBadge>
 				</div>
 			</BaseCard>
