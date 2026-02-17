@@ -1,0 +1,38 @@
+---
+description: Project context and tech stack for the CV portfolio site
+alwaysApply: true
+---
+
+# Project Overview
+
+Personal CV / portfolio single-page application for Shivam Chaudhary.
+
+## Tech Stack
+
+- **Framework**: Nuxt 4 (Vue 3 Composition API)
+- **UI Library**: Nuxt UI 4 (`@nuxt/ui`)
+- **Styling**: Tailwind CSS v4, scoped CSS
+- **Icons**: Nuxt Icon (`@nuxt/icon`) — Heroicons and Simple Icons
+- **Language**: TypeScript (strict)
+- **Linting / Formatting**: Biome (tabs, double quotes, recommended rules)
+- **Package Manager**: Bun (always use `bun` instead of npm/yarn/pnpm)
+- **Git Hooks**: Husky + lint-staged (biome check + nuxi typecheck)
+- **Deployment**: Docker + Caddy, deployed via GitHub Actions
+
+## Project Structure
+
+- `app/components/base/` — reusable UI primitives wrapping Nuxt UI
+- `app/components/cv/` — CV-specific section components
+- `app/data/cv.ts` — static typed CV data
+- `app/types/cv.ts` — TypeScript interfaces for CV data
+- `app/utils/` — utility functions (auto-imported by Nuxt)
+- `app/layouts/` — page layouts
+- `app/pages/` — file-based routing (single index page with hash-based tabs)
+
+## Code Quality
+
+- **No comments in code** — write self-documenting code with clear naming instead of comments. If code needs a comment to be understood, refactor it.
+- **SOLID** — single responsibility, open/closed, Liskov substitution, interface segregation, dependency inversion
+- **DRY** — don't repeat yourself; extract shared logic into composables or utils
+- **KISS** — keep it simple; prefer straightforward solutions over clever ones
+- **YAGNI** — don't build features or abstractions until they are actually needed

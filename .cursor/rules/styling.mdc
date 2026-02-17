@@ -1,0 +1,38 @@
+---
+description: CSS and styling conventions
+globs: **/*.vue,**/*.css
+alwaysApply: false
+---
+
+# Styling Conventions
+
+## Scoped Styles
+
+- Always use `<style scoped>` in Vue components
+- Use BEM-like naming for CSS classes (e.g., `.header__container`, `.experience__card`)
+
+## Design Tokens
+
+Prefer Nuxt UI CSS custom properties over raw color values:
+
+```css
+/* Use tokens */
+background: var(--ui-bg-elevated);
+border-color: var(--ui-border);
+color: var(--ui-text-muted);
+
+/* Don't hardcode colors */
+background: #1a1a1a;
+```
+
+## Theme
+
+- Primary color: `emerald` (configured in `app/app.config.ts`)
+- Neutral color: `zinc`
+- Dark mode is supported via `useColorMode()`
+
+## Tailwind + Scoped CSS
+
+- Use Tailwind utility classes for layout and spacing in templates
+- Use scoped `<style>` blocks for component-specific or complex styles
+- Keep styles co-located with the component that uses them

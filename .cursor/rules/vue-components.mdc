@@ -1,0 +1,42 @@
+---
+description: Vue and Nuxt component conventions
+globs: **/*.vue
+alwaysApply: false
+---
+
+# Vue Component Conventions
+
+## Script Setup
+
+- Always use `<script setup lang="ts">` — no Options API
+- Use typed `defineProps` with TypeScript interfaces
+- Import types from `~/types/` using `import type`
+
+```vue
+<script setup lang="ts">
+import type { Experience } from "~/types/cv";
+
+const props = defineProps<{
+	items: Experience[];
+}>();
+</script>
+```
+
+## Component Organization
+
+- `base/` — thin wrappers around Nuxt UI components (e.g., `BaseButton`, `BaseCard`)
+- `cv/` — data-driven CV section components (e.g., `CvExperience`, `CvEducation`)
+- Nuxt auto-imports components by directory: `BaseBadge`, `CvHeader`, etc.
+
+## Auto-Imports
+
+Nuxt auto-imports composables, components, and utils — do NOT manually import:
+- Composables: `useColorMode`, `useRoute`, `useSeoMeta`, `ref`, `computed`, `watch`, `onMounted`
+- Components: all components in `app/components/`
+- Utils: all exports from `app/utils/`
+
+## Icons
+
+Use string-based icon names with Nuxt Icon:
+- Heroicons: `i-heroicons-briefcase`, `i-heroicons-sun`
+- Simple Icons: `i-simple-icons-github`, `i-simple-icons-linkedin`

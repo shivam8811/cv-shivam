@@ -1,0 +1,33 @@
+---
+description: TypeScript conventions and data patterns
+globs: **/*.ts
+alwaysApply: false
+---
+
+# TypeScript Conventions
+
+## Types
+
+- Define types as `interface` (not `type` alias) in `app/types/`
+- Use `import type` for type-only imports
+- Use optional properties (`?`) for nullable fields
+
+```typescript
+import type { CV } from "~/types/cv";
+```
+
+## CV Data
+
+- All CV content lives in `app/data/cv.ts` as a single typed object (`cv: CV`)
+- When adding new CV sections, first add the interface to `app/types/cv.ts`, then update the `CV` interface, then add the data
+
+## Utils
+
+- Place utility functions in `app/utils/`
+- They are auto-imported by Nuxt — no need for manual imports in components
+- Export named functions (not default exports)
+
+## Path Aliases
+
+- Use `~/` to reference the app root (e.g., `~/types/cv`, `~/data/cv`)
+- Never use relative paths like `../../types/cv`
