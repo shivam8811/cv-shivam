@@ -4,6 +4,11 @@ export default defineNuxtConfig({
 	devtools: { enabled: true },
 	css: ["~/assets/css/main.css"],
 	modules: ["@nuxt/ui", "@nuxt/icon"],
+	runtimeConfig: {
+		public: {
+			siteUrl: "https://shivam-cv.space",
+		},
+	},
 	app: {
 		head: {
 			htmlAttrs: { lang: "en" },

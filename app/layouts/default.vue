@@ -1,12 +1,7 @@
 <script setup lang="ts">
 import { cv } from "~/data/cv";
 
-useSeoMeta({
-	title: `${cv.name} — ${cv.title}`,
-	description: cv.summary,
-	ogTitle: `${cv.name} — ${cv.title}`,
-	ogDescription: cv.summary,
-});
+useCvSeo();
 </script>
 
 <template>
