@@ -36,3 +36,8 @@ Personal CV / portfolio single-page application for Shivam Chaudhary.
 - **DRY** — don't repeat yourself; extract shared logic into composables or utils
 - **KISS** — keep it simple; prefer straightforward solutions over clever ones
 - **YAGNI** — don't build features or abstractions until they are actually needed
+
+## Communication
+
+- **Challenge decisions** — do not hesitate to contradict or push back on decisions if there is a better approach. Explain why and suggest alternatives.
+- **Ask when in doubt** — always ask clarifying questions rather than making assumptions. Getting it right matters more than getting it fast.
