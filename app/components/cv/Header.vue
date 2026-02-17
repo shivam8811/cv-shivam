@@ -14,7 +14,7 @@ defineProps<{
 			:alt="name"
 			size="3xl"
 			class="header__avatar"
-            :ui="{ root: 'bg-primary-500 dark:bg-primary-400 text-white dark:text-slate-900' }"
+			:ui="{ root: 'bg-primary-500 dark:bg-primary-400 text-white dark:text-slate-900' }"
 		/>
 
 		<h1 class="header__name">{{ name }}</h1>
@@ -96,13 +96,13 @@ defineProps<{
 	font-weight: 800;
 	line-height: 1.1;
 	letter-spacing: -0.025em;
-    color: var(--ui-text);
+	color: var(--ui-text);
 }
 
 .header__title {
 	font-size: 1.125rem;
 	color: var(--ui-primary);
-    font-weight: 500;
+	font-weight: 500;
 	margin-bottom: 1rem;
 }
 
@@ -118,7 +118,7 @@ defineProps<{
 }
 
 .header__link:hover {
-    color: var(--ui-primary);
+	color: var(--ui-primary);
 }
 
 .header__social {
