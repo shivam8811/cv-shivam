@@ -48,7 +48,7 @@ export const cv: CV = {
 			],
 		},
 		{
-			company: "Starmobile IT GmbH",
+			company: "starmobile IT GmbH",
 			role: "Fullstack Developer (Working Student)",
 			startDate: "2022-11",
 			endDate: "2025-02",
@@ -102,7 +102,7 @@ export const cv: CV = {
 		},
 		{
 			category: "Backend",
-			items: ["Symfony", "Laravel", "Express.js", "Prisma ORM", "MySQL"],
+			items: ["Symfony", "Laravel", "Express.js", "MySQL"],
 		},
 		{
 			category: "Tools",

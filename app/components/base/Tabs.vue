@@ -1,9 +1,3 @@
-<script setup lang="ts">
-// BaseTabs wraps UTabs with our default styling preferences
-// to ensure consistency and reduce repetition (DRY).
-// Any prop passed to BaseTabs will override these defaults thanks to v-bind="$attrs".
-</script>
-
 <template>
   <UTabs
     variant="link"

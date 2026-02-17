@@ -40,14 +40,12 @@ function getTabFromHash() {
 
 const activeTab = ref(getTabFromHash());
 
-// Sync URL hash on tab change (bypasses router to avoid scroll behavior)
 watch(activeTab, (value) => {
 	if (import.meta.client) {
 		window.history.replaceState(window.history.state, "", `/#${value}`);
 	}
 });
 
-// Sync tab from hash on initial navigation (e.g. shared link)
 onMounted(() => {
 	activeTab.value = getTabFromHash();
 });

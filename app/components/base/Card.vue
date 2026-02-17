@@ -1,8 +1,3 @@
-<script setup lang="ts">
-// BaseCard component to standardize the look of content containers
-// (Experience items, Education items, Project cards)
-</script>
-
 <template>
   <div class="base-card">
     <slot />
