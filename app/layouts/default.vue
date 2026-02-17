@@ -7,29 +7,6 @@ useSeoMeta({
 	ogTitle: `${cv.name} — ${cv.title}`,
 	ogDescription: cv.summary,
 });
-
-const links = [
-	{
-		label: "Experience",
-		to: "/experience",
-		icon: "i-heroicons-briefcase",
-	},
-	{
-		label: "Education",
-		to: "/education",
-		icon: "i-heroicons-academic-cap",
-	},
-	{
-		label: "Projects",
-		to: "/projects",
-		icon: "i-heroicons-code-bracket",
-	},
-	{
-		label: "About",
-		to: "/about",
-		icon: "i-heroicons-user",
-	},
-];
 </script>
 
 <template>
@@ -54,19 +31,6 @@ const links = [
 			</aside>
 
 			<main class="cv-main">
-				<nav class="cv-nav">
-					<BaseButton
-						v-for="link in links"
-						:key="link.to"
-						:to="link.to"
-						:icon="link.icon"
-						class="cv-nav__item"
-						active-class="cv-nav__item--active"
-					>
-						{{ link.label }}
-					</BaseButton>
-				</nav>
-
 				<slot />
 			</main>
 		</div>
@@ -96,25 +60,6 @@ const links = [
 	border-radius: 1rem;
 	padding: 2rem;
 	box-shadow: var(--card-shadow);
-}
-
-.cv-nav {
-	display: flex;
-	gap: 0.5rem;
-	margin-bottom: 2rem;
-	border-bottom: 1px solid var(--ui-border);
-	padding-bottom: 0.5rem;
-	overflow-x: auto;
-}
-
-.cv-nav__item {
-	border-radius: 0.5rem;
-	color: var(--ui-text-muted);
-}
-
-.cv-nav__item--active {
-	background-color: color-mix(in srgb, var(--ui-primary) 10%, transparent);
-	color: var(--ui-primary) !important;
 }
 
 @media (min-width: 1024px) {

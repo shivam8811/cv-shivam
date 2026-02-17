@@ -8,7 +8,6 @@ export default defineNuxtConfig({
 		head: {
 			htmlAttrs: { lang: "en" },
 		},
-		pageTransition: { name: "page", mode: "out-in" },
 	},
 	icon: {
 		serverBundle: "remote",
