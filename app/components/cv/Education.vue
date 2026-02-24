@@ -19,13 +19,13 @@ defineProps<{
 				<div class="education__header">
 					<div class="education__main">
 						<h3 class="education__institution">
-						<a
-							v-if="item.url"
-							:href="item.url"
-							target="_blank"
-							rel="noopener noreferrer"
-							class="education__link"
-						>
+							<a
+								v-if="item.url"
+								:href="item.url"
+								target="_blank"
+								rel="noopener noreferrer"
+								class="education__link"
+							>
 								{{ item.institution }}
 							</a>
 							<span v-else>{{ item.institution }}</span>

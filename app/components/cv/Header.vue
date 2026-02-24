@@ -48,32 +48,32 @@ defineProps<{
 			</BaseButton>
 
 			<div class="header__social">
-			<BaseButton
-				v-if="contact.github"
-				:to="contact.github"
-				target="_blank"
-				rel="noopener noreferrer"
-				icon="i-simple-icons-github"
-				aria-label="GitHub profile"
-			/>
+				<BaseButton
+					v-if="contact.github"
+					:to="contact.github"
+					target="_blank"
+					rel="noopener noreferrer"
+					icon="i-simple-icons-github"
+					aria-label="GitHub profile"
+				/>
 
-			<BaseButton
-				v-if="contact.linkedin"
-				:to="contact.linkedin"
-				target="_blank"
-				rel="noopener noreferrer"
-				icon="i-simple-icons-linkedin"
-				aria-label="LinkedIn profile"
-			/>
+				<BaseButton
+					v-if="contact.linkedin"
+					:to="contact.linkedin"
+					target="_blank"
+					rel="noopener noreferrer"
+					icon="i-simple-icons-linkedin"
+					aria-label="LinkedIn profile"
+				/>
 
-			<BaseButton
-				v-if="contact.xing"
-				:to="contact.xing"
-				target="_blank"
-				rel="noopener noreferrer"
-				icon="i-simple-icons-xing"
-				aria-label="Xing profile"
-			/>
+				<BaseButton
+					v-if="contact.xing"
+					:to="contact.xing"
+					target="_blank"
+					rel="noopener noreferrer"
+					icon="i-simple-icons-xing"
+					aria-label="Xing profile"
+				/>
 			</div>
 		</div>
 	</section>

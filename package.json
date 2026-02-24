@@ -9,12 +9,13 @@
 		"preview": "nuxt preview",
 		"postinstall": "nuxt prepare",
 		"prepare": "husky",
-		"check": "biome check --write",
+		"lint": "eslint .",
+		"lint:fix": "eslint . --fix",
 		"typecheck": "nuxi typecheck"
 	},
 	"lint-staged": {
-		"*.{js,ts,jsx,tsx,json,jsonc,css}": [
-			"biome check --write"
+		"*.{js,ts,vue}": [
+			"eslint --fix"
 		]
 	},
 	"dependencies": {
@@ -26,7 +27,7 @@
 		"vue-router": "^4.6.4"
 	},
 	"devDependencies": {
-		"@biomejs/biome": "2.3.13",
+		"@nuxt/eslint": "^1.15.2",
 		"husky": "^9.1.7",
 		"lint-staged": "^16.2.7"
 	}

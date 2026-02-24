@@ -31,7 +31,7 @@ const items: TabsItem[] = [
 
 const route = useRoute();
 
-const validValues = new Set(items.map((i) => i.value));
+const validValues = new Set(items.map(i => i.value));
 
 function getTabFromHash() {
 	const hash = route.hash?.replace("#", "");

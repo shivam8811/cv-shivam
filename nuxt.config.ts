@@ -1,17 +1,16 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-	compatibilityDate: "2025-07-15",
+	modules: ["@nuxt/ui", "@nuxt/icon", "@nuxt/eslint"],
 	devtools: { enabled: true },
-	css: ["~/assets/css/main.css"],
-	modules: ["@nuxt/ui", "@nuxt/icon"],
-	runtimeConfig: {
-		public: {
-			siteUrl: "https://shivam-cv.space",
-		},
-	},
 	app: {
 		head: {
 			htmlAttrs: { lang: "en" },
+		},
+	},
+	css: ["~/assets/css/main.css"],
+	runtimeConfig: {
+		public: {
+			siteUrl: "https://shivam-cv.space",
 		},
 	},
 	routeRules: {
@@ -19,6 +18,12 @@ export default defineNuxtConfig({
 		"/education": { redirect: "/#education" },
 		"/projects": { redirect: "/#projects" },
 		"/about": { redirect: "/#about" },
+	},
+	compatibilityDate: "2025-07-15",
+	eslint: {
+		config: {
+			stylistic: true,
+		},
 	},
 	icon: {
 		serverBundle: "remote",

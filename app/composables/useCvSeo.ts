@@ -28,26 +28,26 @@ export function useCvSeo() {
 				innerHTML: JSON.stringify({
 					"@context": "https://schema.org",
 					"@type": "Person",
-					name: cv.name,
-					jobTitle: cv.title,
-					description: cv.summary,
-					url: siteUrl,
-					email: cv.contact.email,
-					telephone: cv.contact.phone,
-					address: {
+					"name": cv.name,
+					"jobTitle": cv.title,
+					"description": cv.summary,
+					"url": siteUrl,
+					"email": cv.contact.email,
+					"telephone": cv.contact.phone,
+					"address": {
 						"@type": "PostalAddress",
-						addressLocality: cv.contact.location,
+						"addressLocality": cv.contact.location,
 					},
-					worksFor: {
+					"worksFor": {
 						"@type": "Organization",
-						name: cv.experience[0]?.company,
+						"name": cv.experience[0]?.company,
 					},
-					alumniOf: cv.education.map((edu) => ({
+					"alumniOf": cv.education.map(edu => ({
 						"@type": "EducationalOrganization",
-						name: edu.institution,
+						"name": edu.institution,
 					})),
-					knowsLanguage: cv.languages.map((lang) => lang.name),
-					sameAs: [
+					"knowsLanguage": cv.languages.map(lang => lang.name),
+					"sameAs": [
 						cv.contact.linkedin,
 						cv.contact.xing,
 						cv.contact.github,
