@@ -26,15 +26,16 @@ export const cv: CV = {
 				"Leveraging AI-assisted development tools such as Cursor to boost productivity",
 			],
 			positions: [
-				{
-					type: "Full-time",
-					startDate: "2026-03",
-					current: true,
-				},
+				// {
+				// 	type: "Full-time",
+				// 	startDate: "2026-03",
+				// 	current: true,
+				// },
 				{
 					type: "Part-time",
 					startDate: "2025-11",
-					endDate: "2026-02",
+					// endDate: "2026-02",
+					current: true,
 				},
 				{
 					type: "Internship",
