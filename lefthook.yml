@@ -1,0 +1,12 @@
+pre-commit:
+  parallel: true
+  commands:
+    frontend-lint:
+      root: frontend/
+      glob: "*.{js,ts,vue}"
+      run: bunx eslint --fix {staged_files}
+      stage_fixed: true
+    backend-lint:
+      root: backend/
+      glob: "*.php"
+      run: vendor/bin/mago lint {staged_files}
