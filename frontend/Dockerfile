@@ -5,6 +5,12 @@ FROM base AS deps
 COPY package.json bun.lock ./
 RUN bun install --frozen-lockfile
 
+# --- Dev target: hot reload ---
+FROM deps AS dev
+COPY . .
+CMD ["bun", "run", "dev", "--host", "0.0.0.0"]
+
+# --- Production build ---
 FROM base AS build
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .

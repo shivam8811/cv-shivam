@@ -34,7 +34,8 @@ jobs:
       - name: Build and push Docker image
         uses: docker/build-push-action@v6
         with:
-          context: .
+          context: ./frontend
+          target: production
           push: true
           tags: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:latest
 
@@ -44,7 +45,7 @@ jobs:
           host: ${{ secrets.SERVER_HOST }}
           username: ${{ secrets.SERVER_USER }}
           key: ${{ secrets.SERVER_SSH_KEY }}
-          source: "compose.yaml,Caddyfile"
+          source: "compose.prod.yaml,frontend/Caddyfile"
           target: "~/app"
 
       - name: Deploy to server
@@ -84,7 +85,7 @@ jobs:
             
             sudo docker rm -f cv-shivam || true
             
-            sudo IMAGE_NAME=${{ env.IMAGE_NAME }} docker compose pull
-            sudo IMAGE_NAME=${{ env.IMAGE_NAME }} docker compose up -d --remove-orphans
+            sudo IMAGE_NAME=${{ env.IMAGE_NAME }} docker compose -f compose.prod.yaml pull
+            sudo IMAGE_NAME=${{ env.IMAGE_NAME }} docker compose -f compose.prod.yaml up -d --remove-orphans
             
             sudo docker image prune -f
