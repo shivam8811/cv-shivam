@@ -1,0 +1,26 @@
+version: "3"
+
+tasks:
+  install:
+    desc: Install frontend dependencies
+    cmd: bun install
+
+  dev:
+    desc: Start Nuxt dev server
+    cmd: bun run dev
+
+  build:
+    desc: Build for production
+    cmd: bun run build
+
+  lint:
+    desc: Run ESLint
+    cmd: bun run lint
+
+  lint:fix:
+    desc: Run ESLint with auto-fix
+    cmd: bun run lint:fix
+
+  typecheck:
+    desc: Run TypeScript type checking
+    cmd: bunx nuxi typecheck

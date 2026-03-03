@@ -1,0 +1,26 @@
+version: "3"
+
+includes:
+  frontend:
+    taskfile: ./frontend/Taskfile.yml
+    dir: ./frontend
+  backend:
+    taskfile: ./backend/Taskfile.yml
+    dir: ./backend
+
+tasks:
+  dev:
+    desc: Start all services via Docker Compose
+    cmd: docker compose up --build
+
+  dev:down:
+    desc: Stop all services
+    cmd: docker compose down
+
+  lint:
+    desc: Lint both frontend and backend
+    deps: [frontend:lint, backend:lint]
+
+  lint:fix:
+    desc: Lint and auto-fix both frontend and backend
+    deps: [frontend:lint:fix, backend:lint:fix]

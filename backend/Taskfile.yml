@@ -1,0 +1,14 @@
+version: "3"
+
+tasks:
+  install:
+    desc: Install backend dependencies
+    cmd: composer install
+
+  lint:
+    desc: Run Mago linter
+    cmd: vendor/bin/mago lint
+
+  lint:fix:
+    desc: Run Mago linter with auto-fix
+    cmd: vendor/bin/mago lint --fix
