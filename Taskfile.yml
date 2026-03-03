@@ -9,13 +9,17 @@ includes:
     dir: ./backend
 
 tasks:
-  dev:
+  docker:up:
     desc: Start all services via Docker Compose
-    cmd: docker compose up --build
+    cmd: docker compose up --build -d
 
-  dev:down:
+  docker:down:
     desc: Stop all services
     cmd: docker compose down
+
+  docker:logs:
+    desc: Follow container logs
+    cmd: docker compose logs -f
 
   lint:
     desc: Lint both frontend and backend
